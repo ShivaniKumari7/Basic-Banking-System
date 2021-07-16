@@ -1,0 +1,85 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3308
+-- Generation Time: Jul 16, 2021 at 06:23 AM
+-- Server version: 5.7.28
+-- PHP Version: 7.3.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `sparks bank`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaction`
+--
+
+DROP TABLE IF EXISTS `transaction`;
+CREATE TABLE IF NOT EXISTS `transaction` (
+  `s.no.` int(11) NOT NULL,
+  `sender` varchar(30) NOT NULL,
+  `receiver` varchar(30) NOT NULL,
+  `amount` char(50) DEFAULT NULL,
+  `datetime` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`s.no.`, `sender`, `receiver`, `amount`, `datetime`) VALUES
+(1, 'roshan kumar', 'shivani kumari', '2000', '2020-02-02 08:20:07'),
+(2, 'Sakshi Kumari', 'Annu Kumari', '300', '2020-06-08 11:40:49'),
+(3, 'shivani kumari', 'Annu Kumari', '34', '2021-07-14 12:06:08'),
+(4, 'annu kumari', 'jayshree kumari', '100', '2021-07-15 05:05:06'),
+(5, 'Sonal kumari', 'Shivani kumari', '2000', '2021-07-16 12:16:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `balance` int(40) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `balance`) VALUES
+(1, 'Shivani Kumari', 'shivanikumari@gmail.com', 34538),
+(2, 'sona kumari', 'sonakumari@gmail.com', 29683),
+(3, 'Annu Kumari', 'annukumari@gmail.com', 20024),
+(4, 'Jayshree Kumari', 'jayshreekumari@gmail.com', 30362),
+(5, 'Sakshi Kumari', 'sakshikumari@gmail.com', 4518),
+(6, 'Rupali Kumari', 'rupalikumari@gmail.com', 3913),
+(7, 'Roshan Kumar', 'roshankumar@gmail.com', 33980),
+(8, 'Sonali Kumari', 'sonalikumari@gmail.com', 29991),
+(9, 'Shubham Kumar', 'shubhamkumar@gmail.com', 19994),
+(10, 'Sonal Kumari', 'sonalkumari@gmail.com', 49497);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
